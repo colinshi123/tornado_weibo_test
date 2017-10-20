@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+{% extends "base.html" %} {% block body %}
+<ui>
+    {% for i in likeme %}
+    <li>{{i['user']}}
+    </li>
+    {% end %}
+</ui>
+{% end %}
+
+</html>

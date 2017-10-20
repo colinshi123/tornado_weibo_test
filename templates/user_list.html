@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+{% extends "base.html" %} {% block body %}
+<ui>
+    {% for i in users %} {% if i['account'] in follow_users%}
+    <form action="/follow" method="POST">
+        <li>{{i['account']}}
+            <input type="submit" value="取消关注" />
+        </li>
+        <input hidden name="follow_user" value="{{i['account']}}" /> {% raw xsrf_form_html() %}
+    </form>
+    {% else %}
+    <li>{{i['account']}}<a href="/follow?follow_user={{i['account']}}">关注</a></li>
+    {% end %} {% end %}
+</ui>
+{%end%}
+
+</html>

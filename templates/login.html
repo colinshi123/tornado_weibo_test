@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Please Log In</title>
+</head>
+
+<body>
+    <form action="/login" method="POST">
+        {% raw xsrf_form_html() %} 用户名:
+        <br/>
+        <input type="text" name="account" autofocus/>
+        <br/> 密码:
+        <br/>
+        <input type="password" name="password" />
+        <br/>
+        <br/>
+        <input type="submit" value="用户登入" 用户登入/>
+        <br/>
+    </form>
+    <br/>
+    <form action="/register" method="get">
+        <input type="submit" value="用户注册" 用户注册/>
+        </form>
+</body>
+
+</html>

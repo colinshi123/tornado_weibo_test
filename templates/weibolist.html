@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+{% extends "base.html" %} {% block body %}
+
+    <section>
+        {%for x in weibo%}
+        <fieldset style="left">
+            <legend>由{{x['account']}}发布:</legend>{{x['content']}}
+        </fieldset>
+        <form action="/weiboself" method="post" >
+            <input hidden name="id" value="{{x['_id']}}"  /> {% raw xsrf_form_html() %}
+            <input type="submit" value="删除本条微博" style="right"/>
+        </form>
+        <hr/> {%end%}
+    </section>
+{%end%}
+
+</html>

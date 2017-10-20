@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block body %}
+<body>
+<h1>已关注</h1>
+
+<ul>
+{% for i in follow_users %}
+	<li>{{i['follow_user']}}</li>
+{% end %}
+</ul>
+<h2>
+<a href="/userlist">返回用户列表</a>
+</h2>
+</body>
+{%end%}

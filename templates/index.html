@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+{% extends "base.html" %} {% block body %}
+<br/>
+<form action="/add" method="POST">
+    <fieldset>
+        <legend>写点什么:</legend>
+        <textarea class="W_input" title="微博输入框" name="content" node-type="textEl" pic_split="1" range="0&amp;0" style="overflow: hidden; height: 168px; width: 100%"></textarea>
+        <input type="submit" value="发布微博">
+    </fieldset>
+    {% raw xsrf_form_html() %}
+</form>
+<br/>
+<section>
+    {%for x in weibo%}
+        <fieldset style="left">
+            <legend>由{{x['account']}}发布:</legend>{{x['content']}}
+        </fieldset>
+    <hr/> {%end%}
+</section>
+{% end %}
+
+</html>

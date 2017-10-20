@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>ColinShi的注册页</title>
+</head>
+
+<body>
+    <form action="/register" method="post">
+        {% module xsrf_form_html() %} *用户名：
+        <br/>
+        <input name="account" type="text">
+        <br/> *密码：
+        <br/>
+        <input name="password" type="password">
+        <br/>性别：
+        <br/>
+        <input type="radio" name="sex" value="男" checked>男的
+        <input type="radio" name="sex" value="女">女的
+        <input type="radio" name="sex" value="其他">其他
+        <br/>生日：
+        <br/>
+        <input type="date" name="bday">
+        <br/> 邮箱：
+        <br/>
+        <input name="email" type="email">
+        <br/> 地址：
+        <br/>
+        <input name="address" type="address">
+        <br/>
+        <input type="submit" value="注册">
+    </form>
+    *为必须填写内容
+</body>
+
+</html>
